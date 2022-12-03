@@ -9,4 +9,10 @@
     <select id="checkMember" resultType="String">
         SELECT email from member where email = #{email}
     </select>
+
+    <select id="loginMember" resultType="com.example.todolist.dto.MemberDTO">
+        SELECT *
+        FROM member
+        WHERE email = #{email}
+    </select>
 </mapper>

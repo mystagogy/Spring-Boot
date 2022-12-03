@@ -9,4 +9,6 @@ public interface TodoListMapper {
     public int insertMember(MemberDTO memberDTO);
 
     public String checkMember(String email);
+
+    public MemberDTO loginMember(MemberDTO memberDTO);
 }

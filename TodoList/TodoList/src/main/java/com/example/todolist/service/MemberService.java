@@ -18,4 +18,8 @@ public class MemberService {
     public String checkMember(String email){
         return mr.checkMember(email);
     }
+
+    public MemberDTO loginMember(MemberDTO memberDTO){
+        return mr.loginMember(memberDTO);
+    }
 }

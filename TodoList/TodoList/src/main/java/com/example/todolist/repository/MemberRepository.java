@@ -19,4 +19,8 @@ public class MemberRepository {
         return mapper.checkMember(email);
     }
 
+    public MemberDTO loginMember(MemberDTO memberDTO){
+        return mapper.loginMember(memberDTO);
+    }
+
 }
