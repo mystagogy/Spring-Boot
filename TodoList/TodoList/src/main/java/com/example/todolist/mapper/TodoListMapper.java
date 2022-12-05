@@ -1,14 +1,17 @@
 package com.example.todolist.mapper;
 
-import com.example.todolist.dto.MemberDTO;
+
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.ArrayList;
+
 
 @Mapper
 public interface TodoListMapper {
 
-    public int insertMember(MemberDTO memberDTO);
+    public int insertTodo(String todo, String user_id);
 
-    public String checkMember(String email);
+    public ArrayList<String> selectTodo(String user_id);
 
-    public MemberDTO loginMember(MemberDTO memberDTO);
+    public int deleteTodo(String todo);
 }
