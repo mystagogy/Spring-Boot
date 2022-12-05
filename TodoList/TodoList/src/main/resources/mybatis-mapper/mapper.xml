@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.todolist.mapper.TodoListMapper">
+<mapper namespace="com.example.todolist.mapper.MemberMapper">
     <insert id="insertMember" parameterType="com.example.todolist.dto.MemberDTO">
         INSERT INTO member VALUES (#{name},#{phone},#{email},#{password},#{gender})
     </insert>

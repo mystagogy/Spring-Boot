@@ -1,7 +1,7 @@
 package com.example.todolist.repository;
 
 import com.example.todolist.dto.MemberDTO;
-import com.example.todolist.mapper.TodoListMapper;
+import com.example.todolist.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public class MemberRepository {
 
     @Autowired
-    TodoListMapper mapper;
+    MemberMapper mapper;
 
     public int insertMember(MemberDTO memberDTO){
         return mapper.insertMember(memberDTO);
