@@ -3,6 +3,8 @@ package com.example.todolist.page.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class PageController {
 
@@ -22,7 +24,9 @@ public class PageController {
     }
 
     @GetMapping("/goTodoList")
-    public String todoList(){
+    public String todoList(HttpSession session){
+        if(session.getAttribute("email")=="")
+            return "login";
         return "main";
     }
 }
