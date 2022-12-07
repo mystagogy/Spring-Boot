@@ -15,11 +15,7 @@ public class MemberService {
         return mr.insertMember(memberDTO);
     }
 
-    public String checkMember(String email){
-        return mr.checkMember(email);
-    }
+    public String checkMember(String email){return mr.checkMember(email);}
 
-    public MemberDTO loginMember(MemberDTO memberDTO){
-        return mr.loginMember(memberDTO);
-    }
+    public MemberDTO loginMember(String email, String password) { return mr.loginMember(email,password);}
 }

@@ -11,8 +11,14 @@
     </select>
 
     <select id="loginMember" resultType="com.example.todolist.dto.MemberDTO">
-        SELECT *
-        FROM member
-        WHERE email = #{email}
+        SELECT
+            firstName
+             ,phone
+             ,email
+             ,password
+             ,gender
+        FROM  member
+        where email = #{email}
+          and password = #{password}
     </select>
 </mapper>

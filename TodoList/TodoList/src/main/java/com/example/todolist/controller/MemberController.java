@@ -23,20 +23,14 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(MemberDTO memberDTO, HttpSession session){
-
-        MemberDTO loginMember = ms.loginMember(memberDTO);
-
-        if(loginMember.getEmail().equals("")||loginMember.getPassword().equals("")){
-            return "login";
-        }
-
-        if(loginMember.getEmail().equals(memberDTO.getEmail())||
-                loginMember.getPassword().equals(memberDTO.getPassword())){
-            session.setAttribute("email", loginMember.getEmail());
+    public String login(String email, String password, HttpSession session){
+        System.out.println(email+password);
+        MemberDTO loginMember = ms.loginMember(email, password);
+        System.out.println(loginMember);
+        if(loginMember!=null){
+            session.setAttribute("email", email);
             return "index";
         }
-
         return "login";
     }
 }

@@ -10,5 +10,5 @@ public interface MemberMapper {
 
     public String checkMember(String email);
 
-    public MemberDTO loginMember(MemberDTO memberDTO);
+    public MemberDTO loginMember(String email, String password);
 }
