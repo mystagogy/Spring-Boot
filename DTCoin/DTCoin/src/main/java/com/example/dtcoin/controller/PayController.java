@@ -30,4 +30,22 @@ public class PayController {
         return "충전을 완료하였습니다.";
     }
 
+    @GetMapping("/checkBalance")
+    public String checkBalance(String total, HttpSession session){
+        if(session.getAttribute("email")!=null) {
+            String email = String.valueOf(session.getAttribute("email"));
+            double balance = ps.checkBalance(email);
+            double amount = Double.valueOf(total);
+            System.out.println(balance);
+            System.out.println(amount);
+            if(balance - amount > 0){
+                return "can";
+            }
+            else{
+                return "cannot";
+            }
+        }
+        return "login";
+    }
+
 }

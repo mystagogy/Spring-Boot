@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 @Mapper
-public interface PayMapper {
+public interface CoinMapper {
 
-    public int insertPoint(HashMap<String, String>params);
-
-    public double checkBalance(String email);
-
+    public int insertCoin(HashMap<String, String>params);
 }

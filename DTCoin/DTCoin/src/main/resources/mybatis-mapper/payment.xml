@@ -6,4 +6,13 @@
         INSERT INTO payment (email, amount, uid) VALUES (#{email}, #{amount}, #{uid})
     </insert>
 
+    <select id="checkBalance" parameterType="String" resultType="double">
+        select
+                IFNULL((select sum(amount) from payment where email=#{email}),0) -
+                IFNULL((select sum(total) from buy where email=#{email}),0)
+
+        from dual
+
+    </select>
+
 </mapper>
