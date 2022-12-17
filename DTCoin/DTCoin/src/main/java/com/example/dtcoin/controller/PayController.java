@@ -19,33 +19,23 @@ public class PayController {
 
     @GetMapping("/point")
     public String insertPoint(@RequestParam HashMap<String, String>params, HttpSession session){
-        if(session.getAttribute("email")!=null){
-            String email=String.valueOf(session.getAttribute("email"));
-            params.put("email",email);
-            ps.insertPoint(params);
-        }
-        else{
-            return "로그인 해주세요.";
-        }
+        String email=String.valueOf(session.getAttribute("email"));
+        params.put("email",email);
+        ps.insertPoint(params);
         return "충전을 완료하였습니다.";
     }
 
     @GetMapping("/checkBalance")
     public String checkBalance(String total, HttpSession session){
-        if(session.getAttribute("email")!=null) {
-            String email = String.valueOf(session.getAttribute("email"));
-            double balance = ps.checkBalance(email);
-            double amount = Double.valueOf(total);
-            System.out.println(balance);
-            System.out.println(amount);
-            if(balance - amount > 0){
-                return "can";
-            }
-            else{
-                return "cannot";
-            }
+        String email = String.valueOf(session.getAttribute("email"));
+        double balance = ps.checkBalance(email);
+        double amount = Double.valueOf(total);
+        if(balance - amount > 0){
+            return "can";
         }
-        return "login";
+        else{
+            return "cannot";
+        }
     }
 
     @GetMapping("/pointList")

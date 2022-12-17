@@ -18,13 +18,10 @@ public class CoinController {
 
     @PostMapping("/buyCoin")
     public String buyCoin(@RequestParam HashMap<String, String> coin, HttpSession session){
-        if(session.getAttribute("email") != null){
-            String email = String.valueOf(session.getAttribute("email"));
-            coin.put("email", email);
-            cs.insertCoin(coin);
-            return "구매 완료";
-        }
-        return "구매 실패";
+        String email = String.valueOf(session.getAttribute("email"));
+        coin.put("email", email);
+        cs.insertCoin(coin);
+        return "구매 완료";
     }
 
     @GetMapping("/buyList")
