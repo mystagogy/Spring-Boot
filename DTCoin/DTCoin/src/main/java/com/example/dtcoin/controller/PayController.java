@@ -48,4 +48,10 @@ public class PayController {
         return "login";
     }
 
+    @GetMapping("/pointList")
+    public ArrayList<HashMap<String,Object>> pointList(HttpSession session){
+        String email = String.valueOf(session.getAttribute("email"));
+        return ps.selectPoint(email);
+    }
+
 }

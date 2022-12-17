@@ -9,4 +9,6 @@ import java.util.HashMap;
 public interface CoinMapper {
 
     public int insertCoin(HashMap<String, String>params);
+
+    public ArrayList<HashMap<String ,Object>> selectCoin(String email);
 }

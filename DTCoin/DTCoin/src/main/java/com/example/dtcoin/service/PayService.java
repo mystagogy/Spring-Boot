@@ -17,4 +17,6 @@ public class PayService {
 
     public double checkBalance(String email){return pr.checkBalance(email);}
 
+    public ArrayList<HashMap<String,Object>> selectPoint(String email){return pr.selectPoint(email);}
+
 }

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -26,5 +25,11 @@ public class CoinController {
             return "구매 완료";
         }
         return "구매 실패";
+    }
+
+    @GetMapping("/buyList")
+    public ArrayList<HashMap<String,Object>> buyList(HttpSession session){
+        String email = String.valueOf(session.getAttribute("email"));
+        return cs.selectCoin(email);
     }
 }

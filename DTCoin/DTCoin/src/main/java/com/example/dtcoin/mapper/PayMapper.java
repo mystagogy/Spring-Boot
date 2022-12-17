@@ -12,4 +12,6 @@ public interface PayMapper {
 
     public double checkBalance(String email);
 
+    public ArrayList<HashMap<String,Object>> selectPoint(String email);
+
 }

@@ -13,4 +13,6 @@ public class CoinRepository {
     CoinMapper cm;
 
     public int insertCoin(HashMap<String, String> params){return cm.insertCoin(params);}
+
+    public ArrayList<HashMap<String ,Object>> selectCoin(String email){return cm.selectCoin(email);}
 }
