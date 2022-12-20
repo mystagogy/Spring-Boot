@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.admin.mapper.ListMapper">
+    <select id="selectMember" resultType="com.example.admin.dto.Member">
+        select
+            email
+            ,name
+            ,phone
+            ,address
+            ,detail
+            ,indate
+        from member
+    </select>
+
+    <select id="selectPayment" resultType="com.example.admin.dto.Payment">
+        select
+            id
+             ,email
+             ,amount
+             ,uid
+             ,indate
+        from payment
+    </select>
+
+    <select id="selectBuy" resultType="com.example.admin.dto.Buy">
+        select
+            id
+             ,email
+             ,coinId
+             ,name
+             ,price
+             ,amount
+             ,total
+             ,indate
+        from buy
+    </select>
+
+    <select id="selectContact" resultType="com.example.admin.dto.Contact">
+        select
+            id
+             ,email
+             ,name
+             ,phone
+             ,message
+             ,indate
+        from contact
+    </select>
+
+    <select id="selectSubscribe" resultType="com.example.admin.dto.Subscribe">
+        select
+            email
+             ,indate
+        from subscribe
+    </select>
+</mapper>
