@@ -52,4 +52,28 @@ public class Controller {
     public void deleteAll(){
         es.deleteAll();
     }
+
+    @GetMapping("/selectByName")
+    public List<ExampleResDTO> selectByName(){
+        ExampleReqDTO req = new ExampleReqDTO(8L,"dog",2500);
+        return  es.selectByName(req);
+    }
+
+    @GetMapping("/selectByNameStartWith")
+    public List<ExampleResDTO> selectByNameStartWith(){
+        ExampleReqDTO req = new ExampleReqDTO(8L,"cat",2500);
+        return  es.selectByNameStartWith(req);
+    }
+
+    @GetMapping("/selectByPrice")
+    public List<ExampleResDTO> selectByPrice(){
+        ExampleReqDTO req = new ExampleReqDTO(8L,"cat",2500);
+        return  es.selectByPrice(req);
+    }
+
+    @GetMapping("/selectByNameAndPrice")
+    public List<ExampleResDTO> selectByNameAndPrice(){
+        ExampleReqDTO req = new ExampleReqDTO(8L,"dog",2500);
+        return  es.selectByNameAndPrice(req);
+    }
 }
