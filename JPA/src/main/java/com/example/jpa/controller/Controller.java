@@ -42,4 +42,14 @@ public class Controller {
 
         return es.selectOne(new ExampleReqDTO(3L,"cow",1500));
     }
+
+    @GetMapping("/deleteOne")
+    public void deleteOne(){
+        es.deleteOne(new ExampleReqDTO(3L,"dog",1500));
+    }
+
+    @GetMapping("/deleteAll")
+    public void deleteAll(){
+        es.deleteAll();
+    }
 }
